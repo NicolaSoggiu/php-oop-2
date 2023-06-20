@@ -21,4 +21,11 @@ class Dogs extends Products
     {
         return $this->type;
     }
+
+    public function printDogs()
+    {
+        echo "<h1>{$this->getName()}</h1>";
+        echo "<h3>{$this->getPrice()}</h3>";
+        echo "<h4>{$this->type}</h4>";
+    }
 }
