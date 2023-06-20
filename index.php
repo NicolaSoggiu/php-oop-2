@@ -5,6 +5,7 @@ include __DIR__ . "/models/Games.php";
 include __DIR__ . "/models/Foods.php";
 include __DIR__ . "/models/Kennels.php";
 include __DIR__ . "/models/Accessories.php";
+include __DIR__ . "/db.php";
 
 
 ?>

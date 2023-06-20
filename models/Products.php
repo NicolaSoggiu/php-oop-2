@@ -2,18 +2,27 @@
 
 class Products
 {
-    private string $name;
+    private string $animal;
     private string $price;
+    private string $title;
+    private string $urlImg;
 
-    public function __construct($name, $price)
+    public function __construct(string $animal, string $price, string $title, string $urlImg)
     {
-        $this->name = $name;
+        $this->animal = $animal;
         $this->price = $price;
+        $this->title = $title;
+        $this->urlImg = $urlImg;
     }
 
     public function getName()
     {
-        return $this->name;
+        return $this->animal;
+    }
+
+    public function setName($animal)
+    {
+        $this->animal = $animal;
     }
 
     public function getPrice()
@@ -21,13 +30,28 @@ class Products
         return $this->price;
     }
 
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
     public function setPrice($price)
     {
         $this->price = $price;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->price = $title;
+    }
+
+    public function getUrlImg()
+    {
+        return $this->urlImg;
+    }
+
+    public function setUrlImg($urlImg)
+    {
+        $this->price = $urlImg;
     }
 }
