@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . "/models/Animals.php";
+include __DIR__ . "/models/Products.php";
 
 
 ?>
