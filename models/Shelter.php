@@ -12,9 +12,9 @@ class Shelter extends Product
     int $price,
     Category $category,
     string $image,
-    protected int $height,
-    protected int $width,
-    protected int $length,
+    protected string $length,
+    protected string $height,
+    protected string $width,
   ) {
     parent::__construct($id, $name, $description, $price, $category, $image);
   }
@@ -40,7 +40,7 @@ class Shelter extends Product
 
         </ul>
         <div class=\"card-body\">
-          <a href=\"#\" class=\"card-link\">Card link</a>
+          <a href=\"#\" class=\"card-link\">More info</a>
         </div>
       </div>
       </div>";

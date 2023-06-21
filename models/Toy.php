@@ -38,7 +38,7 @@ class Toy extends Product
 
         </ul>
         <div class=\"card-body\">
-          <a href=\"#\" class=\"card-link\">Card link</a>
+          <a href=\"#\" class=\"card-link\">More info</a>
         </div>
       </div>
       </div>";

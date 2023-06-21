@@ -33,12 +33,12 @@ class Food extends Product
         <ul class=\"list-group list-group-flush\">
         <li class=\"list-group-item\">Type : {$type}</li>
         <li class=\"list-group-item\">Category : {$this->category->getName()}</li>
-          <li class=\"list-group-item\">Expiry :{$this->expiry}</li>
-          <li class=\"list-group-item\">Weigth :{$this->weigth}</li>
-          <li class=\"list-group-item\">Price :{$this->getFormattedPrice()}</li>
+          <li class=\"list-group-item\">Expiry : {$this->expiry}</li>
+          <li class=\"list-group-item\">Weigth : {$this->weigth}</li>
+          <li class=\"list-group-item\">Price : {$this->getFormattedPrice()}</li>
         </ul>
         <div class=\"card-body\">
-          <a href=\"#\" class=\"card-link\">Card link</a>
+          <a href=\"#\" class=\"card-link\">More info</a>
         </div>
       </div>
       </div>";
