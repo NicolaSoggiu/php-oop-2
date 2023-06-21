@@ -2,9 +2,10 @@
 
 include_once __DIR__ . "/Product.php";
 
-
 class Shelter extends Product
 {
+  use Measure;
+
   public function __construct(
     int $id,
     string $name,
@@ -12,11 +13,11 @@ class Shelter extends Product
     int $price,
     Category $category,
     string $image,
-    protected string $length,
-    protected string $height,
-    protected string $width,
+    string $length,
+    string $height,
+    string $width,
   ) {
-    parent::__construct($id, $name, $description, $price, $category, $image);
+    parent::__construct($id, $name, $description, $price, $category, $image, $length, $height, $width);
   }
 
   public function printCard()
@@ -25,7 +26,7 @@ class Shelter extends Product
     return "
         <div class=\"col\">
         <div class=\"card\" style=\"width: 18rem;\">
-        <img src=\"{$this->image}\" class=\"card-img-top\" alt=\"{$this->name}\">
+        <img src=\"{$this->image}\" class=\"card-img-top card_size\" alt=\"{$this->name}\">
         <div class=\"card-body\">
           <h5 class=\"card-title\">{$this->name}</h5>
           <p class=\"card-text\">{$this->description}</p>
@@ -44,5 +45,18 @@ class Shelter extends Product
         </div>
       </div>
       </div>";
+  }
+}
+
+
+trait Measure
+{
+  protected  $length;
+  protected  $height;
+  protected  $width;
+
+  public function getFormattedMeasure()
+  {
+    return "{$this->length}, {$this->height}, {$this->width}";
   }
 }

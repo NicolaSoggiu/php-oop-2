@@ -25,7 +25,7 @@ class Food extends Product
     return "
         <div class=\"col\">
         <div class=\"card\" style=\"width: 18rem;\">
-        <img src=\"{$this->image}\" class=\"card-img-top\" alt=\"{$this->name}\">
+        <img src=\"{$this->image}\" class=\"card-img-top card_size\" alt=\"{$this->name}\">
         <div class=\"card-body\">
           <h5 class=\"card-title\">{$this->name}</h5>
           <p class=\"card-text\">{$this->description}</p>

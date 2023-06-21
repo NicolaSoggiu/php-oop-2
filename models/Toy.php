@@ -5,6 +5,9 @@ include_once __DIR__ . "/Product.php";
 
 class Toy extends Product
 {
+
+
+
   public function __construct(
     int $id,
     string $name,
@@ -14,6 +17,7 @@ class Toy extends Product
     string $image,
     protected string $material,
     protected string $color,
+
   ) {
     parent::__construct($id, $name, $description, $price, $category, $image);
   }
@@ -24,7 +28,7 @@ class Toy extends Product
     return "
         <div class=\"col\">
         <div class=\"card\" style=\"width: 18rem;\">
-        <img src=\"{$this->image}\" class=\"card-img-top\" alt=\"{$this->name}\">
+        <img src=\"{$this->image}\" class=\"card_size\" alt=\"{$this->name}\">
         <div class=\"card-body\">
           <h5 class=\"card-title\">{$this->name}</h5>
           <p class=\"card-text\">{$this->description}</p>
