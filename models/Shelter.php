@@ -1,11 +1,13 @@
 <?php
 
 include_once __DIR__ . "/Product.php";
+include_once __DIR__ . "/../traits/Shipping.php";
+
 
 class Shelter extends Product
 {
-  use Measure;
 
+  use Shipping;
   public function __construct(
     int $id,
     string $name,
@@ -13,31 +15,38 @@ class Shelter extends Product
     int $price,
     Category $category,
     string $image,
-    string $length,
-    string $height,
-    string $width,
+    protected string $length,
+    protected string $height,
+    protected string $width,
+    int $weight,
+
   ) {
-    parent::__construct($id, $name, $description, $price, $category, $image, $length, $height, $width);
+    parent::__construct($id, $name, $description, $price, $category, $image);
+    $this->setWeight($weight);
   }
+
 
   public function printCard()
   {
     $type = get_class($this);
     return "
         <div class=\"col\">
-        <div class=\"card\" style=\"width: 18rem;\">
-        <img src=\"{$this->image}\" class=\"card-img-top card_size\" alt=\"{$this->name}\">
-        <div class=\"card-body\">
+        <div class=\"card h-100\" style=\"width: 20rem heigth: 15rem;\">
+        <img src=\"{$this->image}\" class=\"card_size\" alt=\"{$this->name}\">
+        <div class=\"p-3\">
           <h5 class=\"card-title\">{$this->name}</h5>
           <p class=\"card-text\">{$this->description}</p>
         </div>
         <ul class=\"list-group list-group-flush\">
         <li class=\"list-group-item\">Type : {$type}</li>
+        <li class=\"list-group-item\">Weight : {$this->weight}</li>
           <li class=\"list-group-item\">Category : {$this->category->getName()}</li>
           <li class=\"list-group-item\">Height :{$this->height}</li>
           <li class=\"list-group-item\">Width :{$this->width}</li>
           <li class=\"list-group-item\">Lenght :{$this->length}</li>
           <li class=\"list-group-item\">Price :{$this->getFormattedPrice()}</li>
+          <li class=\"list-group-item\">Shipping :{$this->getShippingPrice()}</li>
+
 
         </ul>
         <div class=\"card-body\">
@@ -45,18 +54,5 @@ class Shelter extends Product
         </div>
       </div>
       </div>";
-  }
-}
-
-
-trait Measure
-{
-  protected  $length;
-  protected  $height;
-  protected  $width;
-
-  public function getFormattedMeasure()
-  {
-    return "{$this->length}, {$this->height}, {$this->width}";
   }
 }
